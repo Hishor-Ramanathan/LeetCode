@@ -1,8 +1,6 @@
 package test;
-
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class AlgorithmsTest {
     @Test
@@ -17,6 +15,6 @@ public class AlgorithmsTest {
         int[] result = algorithms.twoSum(nums,target);
 
         //Assert
-        assertEquals(expected,result);
+        assertArrayEquals(expected, result);
     }
 }

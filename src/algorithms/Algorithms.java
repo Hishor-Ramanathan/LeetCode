@@ -1,7 +1,6 @@
 package algorithms;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class Algorithms {
     //1. Two Sum
@@ -48,9 +47,9 @@ public class Algorithms {
             int val2 = l2 == null ? 0 : l2.val;
 
             int sum = val1 + val2 + carryOver;
-            carryOver = sum/10;
+            carryOver = sum / 10;
 
-            current.next = new ListNode(sum%10);
+            current.next = new ListNode(sum % 10);
             current = current.next;
 
             if (l1 != null) l1 = l1.next;
@@ -59,4 +58,25 @@ public class Algorithms {
         return head.next;
     }
 
+    public int lengthOfLongestSubstring(String s) {
+        HashSet<Character> set = new HashSet<>();
+        int left = 0;
+        int right = 0;
+        int maxLength = 0;
+
+        while (right < s.length()) {
+            char currentChar = s.charAt(right);
+
+            if (!set.contains(currentChar)) {
+                set.add(currentChar);
+                maxLength = Math.max(maxLength, right - left + 1);
+                right++;
+            } else {
+                set.remove(s.charAt(left));
+                left++;
+            }
+        }
+
+        return maxLength;
+    }
 }

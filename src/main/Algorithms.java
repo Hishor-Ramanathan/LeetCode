@@ -1,7 +1,6 @@
-package Main.algorithms;
+package algorithms;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class Algorithms {

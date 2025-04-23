@@ -1,26 +1,26 @@
 package test;
 
-import algorithms.Algorithms;
+import algorithms.exercises.Exercises;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class AlgorithmsTest {
+public class ExercisesTest {
     @Test
     public void testTwoSum() {
         //Arrange
-        algorithms.Algorithms algorithms = new algorithms.Algorithms();
+        Exercises exercises = new Exercises();
         int[] nums = new int[]{2, 7, 11, 15};
         int target = 9;
 
         //Act
-        int[] result = algorithms.twoSum(nums, target);
+        int[] result = exercises.twoSum(nums, target);
 
         //Assert
         assertArrayEquals(new int[]{0, 1}, result);
     }
 
-    void assertLinkedListEquals(Algorithms.ListNode expected, Algorithms.ListNode actual) {
+    void assertLinkedListEquals(Exercises.ListNode expected, Exercises.ListNode actual) {
         while (expected != null && actual != null) {
             assertEquals(expected.val, actual.val);
             expected = expected.next;
@@ -33,41 +33,41 @@ public class AlgorithmsTest {
     @Test
     public void testAddTwoNumbers() {
         //Arrange
-        Algorithms algorithms = new Algorithms();
-        Algorithms.ListNode l1 = new Algorithms.ListNode(2, new Algorithms.ListNode(4, new Algorithms.ListNode(3)));
-        Algorithms.ListNode l2 = new Algorithms.ListNode(5, new Algorithms.ListNode(6, new Algorithms.ListNode(4)));
+        Exercises exercises = new Exercises();
+        Exercises.ListNode l1 = new Exercises.ListNode(2, new Exercises.ListNode(4, new Exercises.ListNode(3)));
+        Exercises.ListNode l2 = new Exercises.ListNode(5, new Exercises.ListNode(6, new Exercises.ListNode(4)));
 
         //Act
-        Algorithms.ListNode result = algorithms.addTwoNumbers(l1, l2);
+        Exercises.ListNode result = exercises.addTwoNumbers(l1, l2);
 
         //Assert
-        Algorithms.ListNode expected = new Algorithms.ListNode(7, new Algorithms.ListNode(0, new Algorithms.ListNode(8)));
+        Exercises.ListNode expected = new Exercises.ListNode(7, new Exercises.ListNode(0, new Exercises.ListNode(8)));
         assertLinkedListEquals(expected, result);
     }
 
     @Test
     public void testLengthOfLongestSubstring() {
         //Arrange
-        Algorithms algorithms = new Algorithms();
+        Exercises exercises = new Exercises();
         String s1 = "abcabcbb";
         String s2 = "bbbbb";
         String s3 = "pwwkew";
 
         //Case 1
         //Act
-        int result = algorithms.lengthOfLongestSubstring(s1);
+        int result = exercises.lengthOfLongestSubstring(s1);
         //Assert
         assertEquals(3, result);
 
         //Case 2
         //Act
-        result = algorithms.lengthOfLongestSubstring(s2);
+        result = exercises.lengthOfLongestSubstring(s2);
         //Assert
         assertEquals(1, result);
 
         //Case 3
         //Act
-        result = algorithms.lengthOfLongestSubstring(s3);
+        result = exercises.lengthOfLongestSubstring(s3);
         //Assert
         assertEquals(3, result);
     }

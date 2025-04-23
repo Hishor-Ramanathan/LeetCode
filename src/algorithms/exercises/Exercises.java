@@ -1,8 +1,8 @@
-package algorithms;
+package algorithms.exercises;
 
 import java.util.*;
 
-public class Algorithms {
+public class Exercises {
     //1. Two Sum
     public int[] twoSum(int[] nums, int target) {
         // Map: <needed number to reach target, index of the current number in the given array>
@@ -78,5 +78,21 @@ public class Algorithms {
         }
 
         return maxLength;
+    }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        /* double size = nums1.length + nums2.length;
+        int middleNums1 = nums1.length;
+        int middleNums2 = nums2.length;
+
+        double middle = size/2;
+
+        for (int i = 0; i < ; i++) {
+            if(middleNums1 < middleNums2){
+
+            }
+            nums1[]
+        }*/
+        return 1;
     }
 }

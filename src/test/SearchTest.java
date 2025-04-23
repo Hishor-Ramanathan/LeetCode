@@ -4,8 +4,7 @@ import algorithms.exercises.Exercises;
 import algorithms.search.Search;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchTest {
     @Test
@@ -20,5 +19,18 @@ public class SearchTest {
 
         //Assert
         assertTrue(result);
+    }
+
+    @Test
+    public void testTwoCrystalBall(){
+        //Arrange
+        Search search = new Search();
+        boolean[] floors = new boolean[]{false,false,false,false,false,true,true,true,true,true,true};
+
+        //Act
+        int result = search.twoCrystalBall(floors);
+
+        //Assert
+        assertEquals(6,result);
     }
 }
